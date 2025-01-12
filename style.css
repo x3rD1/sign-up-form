@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    justify-content: center;
+    background: #000;
+}
+
+h2 {
+    margin: -.8rem 0 1rem 0;
+    padding-left: 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: #596D48;
+}
+
+button {
+    width: 12rem;
+    height: 2.6rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    margin: 1.6rem 0 1.3rem 0;
+    background-color: #596D48;
+    color: white;
+}
+
+button + p {
+    font-size: 1rem;
+}
+.main-container {
+    display: flex;
+    
+    
+}
+
+.left-section, .right-section, img{
+    width: 28vw;
+    height: 100vh;
+}
+
+.right-section{
+    width: 42vw;
+    background-color: whitesmoke;
+    
+}
+
+
+
+.message, .account-container {
+    width: 36rem;
+    height: 16rem;
+    padding-left: 2.2rem;
+}
+
+.message {
+    display: block;
+    padding-bottom: 2.4rem;
+    align-content: end;
+}
+
+p {
+    font-size: 1.3rem;
+}
+
+p:first-child {
+    padding-bottom: 1.3rem;
+}
+
+form, .pdetails , .edetails, .pass{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+form{
+    row-gap: .8rem;
+    padding-left: 2.2rem;
+}
+
+
+.form-container {
+    padding: 1.8rem 0 1.8rem 0;
+    background-color: rgb(255, 252, 252);
+    box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.1)
+}
+
+.pdetails div, .edetails div, .pass div {
+    display: flex;
+    flex-direction: column;
+}
+
+.pdetails div:first-child, .edetails div:first-child, .pass div:first-child {
+    margin-right: 3.5rem;
+}
+
+label {
+    font-size: .8rem;
+}
+
+input {
+    padding-left: .4rem;
+    height: 1.4rem;
+    width: 12rem;
+    border-color: #E5E7EB;
+}
