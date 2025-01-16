@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body {
     display: flex;
@@ -105,4 +106,14 @@ input {
     height: 1.4rem;
     width: 12rem;
     border-color: #E5E7EB;
+}
+
+input:invalid {
+    border-color: red;
+}
+
+input:focus {
+    border-color:  blue;
+    outline: none;
+    box-shadow: 1.5px 1.5px 4px gray;
 }
