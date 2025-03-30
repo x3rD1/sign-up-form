@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100svw;
+  height: 100svh;
+}
+
+form {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#email:focus {
+  outline: none;
+  border: 2px solid orange;
+}
+#email.valid {
+  border: 2px solid green;
+}
+#email.error {
+  border: 2px solid red;
+}

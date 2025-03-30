@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Form</title>
+  </head>
+  <body>
+    <form novalidate>
+      <div class="mailContainer form-group">
+        <label for="email">Email: </label>
+        <input type="email" id="email" required minlength="7" />
+        <span class="emailError"></span>
+      </div>
+
+      <div class="countryContainer form-group">
+        <label for="country">Country: </label>
+        <select name="country" id="country" required>
+          <option value="ph">Philippines</option>
+          <option value="mx">Mexico</option>
+          <option value="us">United States</option>
+          <option value="jp">Japan</option>
+        </select>
+        <span class="countryError"></span>
+      </div>
+
+      <div class="postalContainer form-group">
+        <label for="postal">Postal Code: </label>
+        <input type="number" id="postal" required />
+        <span class="PostalError"></span>
+      </div>
+
+      <div class="passwordContainer form-group">
+        <div class="pass form-group">
+          <label for="password">Password: </label>
+          <input type="password" id="password" required />
+          <span class="passwordError"></span>
+        </div>
+        <div class="confirm-passContainer form-group">
+          <label for="confirm-password">Confirm Password: </label>
+          <input type="password" id="confirm-password" required />
+          <span class="confirm-passwordError"></span>
+        </div>
+      </div>
+      <button>Submit</button>
+    </form>
+  </body>
+</html>
