@@ -23,13 +23,12 @@ form {
   gap: 6px;
 }
 
-#email:focus {
-  outline: none;
-  border: 2px solid orange;
-}
-#email.valid {
-  border: 2px solid green;
-}
 #email.error {
+  outline: none;
+  border: 2px solid red;
+}
+
+#postal.error {
+  outline: none;
   border: 2px solid red;
 }

@@ -1,10 +1,7 @@
 const form = document.querySelector("form");
 
 const email = document.querySelector("#email");
-email.setAttribute("autocomplete", "off");
 const emailError = document.querySelector(".emailError");
-const emailPattern =
-  /^(?=.{7,})[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 const country = document.querySelector("#country");
 const countryError = document.querySelector(".countryError");
@@ -18,6 +15,11 @@ const passwordError = document.querySelector(".passwordError");
 const confirmPassword = document.querySelector("#confirm-password");
 const confirmPasswordError = document.querySelector(".confirm-passwordError");
 
+const patterns = {
+  email: /^(?=.{7,})[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+  postal: /^\d{4}$/,
+};
+
 const showErrors = ShowErrors();
 
 form.addEventListener("submit", (e) => {
@@ -27,19 +29,6 @@ form.addEventListener("submit", (e) => {
     showErrors.showEmailError();
     // prevent form submission
     e.preventDefault();
-  }
-});
-
-email.addEventListener("input", () => {
-  if (emailPattern.test(email.value)) {
-    emailError.textContent = "";
-    email.classList.remove("error");
-    email.classList.add("valid");
-  } else if (email.value === "") {
-    email.classList.remove("error");
-    email.classList.remove("valid");
-  } else {
-    email.classList.add("error");
   }
 });
 
@@ -76,12 +65,26 @@ function ShowErrors() {
 const inputs = document.querySelectorAll("input");
 
 inputs.forEach((input) => {
-  const span = document.querySelector(`.${input.id}Error`);
-  input.addEventListener("blur", () => {
-    if (input.value !== "") {
-      return;
+  //const span = document.querySelector(`.${input.id}Error`);
+  // validates input when is not in focus
+  input.addEventListener("change", () => {
+    const elementId = input.id;
+    const elementError = document.querySelector(`.${elementId}Error`);
+    const pattern = patterns[elementId];
+
+    if (pattern && pattern.test(input.value)) {
+      elementError.textContent = "";
+      input.classList.remove("error");
+    } else if (input.value === "") {
+      input.classList.remove("error");
     } else {
-      span.textContent = "";
+      input.classList.add("error");
+    }
+  });
+
+  // removes error class if input is empty
+  input.addEventListener("input", () => {
+    if (input.value === "") {
       input.classList.remove("error");
     }
   });
